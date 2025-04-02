@@ -14,6 +14,50 @@ export interface BlocksHero extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksParallaxBanner extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_parallax_banners';
+  info: {
+    description: '';
+    displayName: 'Parallax Banner';
+  };
+  attributes: {
+    parallaxBanner: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface BlocksSignupBanner extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_signup_banners';
+  info: {
+    displayName: 'Signup Banner';
+  };
+  attributes: {
+    logoLink: Schema.Attribute.Component<'shared.link', false>;
+    signupLink: Schema.Attribute.Component<'shared.link', false>;
+  };
+}
+
+export interface BlocksSponsors extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_sponsors';
+  info: {
+    displayName: 'Sponsors';
+  };
+  attributes: {
+    sponsor: Schema.Attribute.Component<'shared.link', true>;
+    tier: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksStoryCategories extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_story_categories';
+  info: {
+    displayName: 'Story Categories';
+  };
+  attributes: {
+    category: Schema.Attribute.Component<'shared.category-card', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutFooter extends Struct.ComponentSchema {
   collectionName: 'components_layout_footers';
   info: {
@@ -39,6 +83,19 @@ export interface LayoutHeader extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCategoryCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_category_cards';
+  info: {
+    description: '';
+    displayName: 'Category Card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
 export interface SharedLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_links';
   info: {
@@ -59,8 +116,13 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blocks.hero': BlocksHero;
+      'blocks.parallax-banner': BlocksParallaxBanner;
+      'blocks.signup-banner': BlocksSignupBanner;
+      'blocks.sponsors': BlocksSponsors;
+      'blocks.story-categories': BlocksStoryCategories;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
+      'shared.category-card': SharedCategoryCard;
       'shared.link': SharedLink;
     }
   }

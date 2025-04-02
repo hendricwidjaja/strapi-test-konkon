@@ -20,7 +20,11 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "blocks.hero"
+        "blocks.hero",
+        "blocks.sponsors",
+        "blocks.story-categories",
+        "blocks.signup-banner",
+        "blocks.parallax-banner"
       ]
     }
   }
