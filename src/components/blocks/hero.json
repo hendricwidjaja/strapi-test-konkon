@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_blocks_heroes",
+  "info": {
+    "displayName": "Hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleOne": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "submit": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link"
+    },
+    "titleTwo": {
+      "type": "string"
+    }
+  }
+}
